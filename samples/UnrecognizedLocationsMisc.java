@@ -22,11 +22,8 @@ class UnrecognizedLocationsMisc {
   interface Super {}
 
   static class Sub
-      // jspecify_nullness_intrinsically_not_nullable
       extends @Nullable Object
-      // jspecify_nullness_intrinsically_not_nullable
       implements @Nullable Super {
-    // jspecify_nullness_intrinsically_not_nullable
     @Nullable
     Sub() {}
   }

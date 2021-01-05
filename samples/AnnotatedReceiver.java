@@ -23,10 +23,8 @@ interface AnnotatedReceiver {
 
   void foo(AnnotatedReceiver this);
 
-  // jspecify_nullness_intrinsically_not_nullable
   void nullableReceiverInvalid(@Nullable AnnotatedReceiver this);
 
-  // jspecify_nullness_intrinsically_not_nullable
   void unspecifiedReceiverInvalid(@NullnessUnspecified AnnotatedReceiver this);
 
   // TODO(#157,#158): figure out bar(AnnotatedReceiver<@Nullable T, @NullnessUnspecified U> this)

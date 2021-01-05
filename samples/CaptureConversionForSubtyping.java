@@ -24,6 +24,7 @@ class CaptureConversionForSubtyping {
   }
 
   Object x(Supplier<? extends Object, ?> bar) {
+    // jspecify_nullness_not_enough_information
     return bar.get();
   }
 }

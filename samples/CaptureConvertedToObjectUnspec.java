@@ -56,12 +56,14 @@ class CaptureConvertedToObjectUnspec {
   }
 
   @NullnessUnspecified
+  // jspecify_nullness_not_enough_information
   Object x7(UnspecBounded<? extends @NullnessUnspecified Lib> x) {
     // jspecify_nullness_not_enough_information
     return x.get();
   }
 
   @NullnessUnspecified
+  // jspecify_nullness_not_enough_information
   Object x8(UnspecBounded<? extends @Nullable Lib> x) {
     // jspecify_nullness_not_enough_information
     return x.get();

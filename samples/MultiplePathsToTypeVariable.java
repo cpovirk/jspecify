@@ -48,11 +48,13 @@ class MultiplePathsToTypeVariable {
     return t.get();
   }
 
+  // jspecify_nullness_not_enough_information
   <T> Object x4(TUnspecBounded<T, ? extends @NullnessUnspecified T> t) {
     // jspecify_nullness_not_enough_information
     return t.get();
   }
 
+  // jspecify_nullness_not_enough_information
   <T> Object x5(TUnspecBounded<T, ? extends @Nullable T> t) {
     // jspecify_nullness_not_enough_information
     return t.get();

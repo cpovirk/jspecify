@@ -37,10 +37,8 @@ class NotNullAwareAnnotatedInnerOfNonParameterized {
       NotNullAwareAnnotatedInnerOfNonParameterized.@Nullable Nested.DoublyNested x8,
       NotNullAwareAnnotatedInnerOfNonParameterized.Nested.@Nullable DoublyNested x9,
 
-      // jspecify_nullness_intrinsically_not_nullable
       Lib<@Nullable NotNullAwareAnnotatedInnerOfNonParameterized.Nested.DoublyNested> l1,
 
-      // jspecify_nullness_intrinsically_not_nullable
       Lib<NotNullAwareAnnotatedInnerOfNonParameterized.@Nullable Nested.DoublyNested> l2,
       Lib<NotNullAwareAnnotatedInnerOfNonParameterized.Nested.DoublyNested> l3) {}
 }

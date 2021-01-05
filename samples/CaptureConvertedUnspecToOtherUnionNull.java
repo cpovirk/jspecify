@@ -56,11 +56,13 @@ abstract class CaptureConvertedUnspecToOtherUnionNull {
   }
 
   @Nullable
+  // jspecify_nullness_not_enough_information
   Lib x7(UnspecBounded<? extends @NullnessUnspecified Lib> x) {
     return unspec(x.get());
   }
 
   @Nullable
+  // jspecify_nullness_not_enough_information
   Lib x8(UnspecBounded<? extends @Nullable Lib> x) {
     return unspec(x.get());
   }

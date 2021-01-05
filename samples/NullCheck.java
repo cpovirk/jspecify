@@ -57,7 +57,7 @@ class NullCheck {
 
   Object x4(@NullnessUnspecified Object o) {
     if (o == null) {
-      // jspecify_nullness_mismatch
+      // jspecify_nullness_not_enough_information
       return o;
     } else {
       return o;

@@ -55,11 +55,13 @@ abstract class CaptureConvertedUnionNullToOther {
     return unionNull(x.get());
   }
 
+  // jspecify_nullness_not_enough_information
   Lib x7(UnspecBounded<? extends @NullnessUnspecified Lib> x) {
     // jspecify_nullness_mismatch
     return unionNull(x.get());
   }
 
+  // jspecify_nullness_not_enough_information
   Lib x8(UnspecBounded<? extends @Nullable Lib> x) {
     // jspecify_nullness_mismatch
     return unionNull(x.get());

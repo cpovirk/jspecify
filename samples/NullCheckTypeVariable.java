@@ -56,7 +56,7 @@ class NullCheckTypeVariable<T> {
 
   Object x4(@NullnessUnspecified T o) {
     if (o == null) {
-      // jspecify_nullness_mismatch
+      // jspecify_nullness_not_enough_information
       return o;
     } else {
       return o;

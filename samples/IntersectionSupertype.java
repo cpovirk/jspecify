@@ -73,17 +73,14 @@ interface IntersectionSupertype {
   default void useLibUnionNull(@Nullable Lib lib) {
     // jspecify_nullness_mismatch
     x0(lib);
-    // jspecify_nullness_mismatch
+    // jspecify_nullness_not_enough_information
     x1(lib);
-    // jspecify_nullness_mismatch
     x2(lib);
-    // jspecify_nullness_mismatch
+    // jspecify_nullness_not_enough_information
     x3(lib);
     // jspecify_nullness_not_enough_information
     x4(lib);
-    // jspecify_nullness_not_enough_information
     x5(lib);
-    // jspecify_nullness_mismatch
     x6(lib);
     // jspecify_nullness_not_enough_information
     x7(lib);
