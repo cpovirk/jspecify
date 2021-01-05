@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="ja" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>jspecify: 静的解析のための標準化されたJavaアノテーション &mdash; jspecify  ドキュメント</title>
+  <title>JSpecify: 静的解析のための標準化されたJavaアノテーション &mdash; JSpecify  ドキュメント</title>
   
 
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -36,7 +39,8 @@
 
     
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" /> 
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="The Simplest(?) Thing That Could Possibly Work for subtyping" href="tsttcpw.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -50,7 +54,7 @@
           
 
           
-            <a href="#" class="icon icon-home" alt="Documentation Home"> jspecify
+            <a href="#" class="icon icon-home"> JSpecify
           
 
           
@@ -81,18 +85,11 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">jspecify: 静的解析のための標準化されたJavaアノテーション</a><ul>
-<li><a class="reference internal" href="#our-goal">私達の目的</a></li>
-<li><a class="reference internal" href="#talks-about-jspecify">jspecifyに関するトーク</a></li>
-<li><a class="reference internal" href="#participants">参加団体</a></li>
-<li><a class="reference internal" href="#contact-info">連絡先</a></li>
-<li><a class="reference internal" href="#indices-and-searches">索引と検索</a></li>
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tsttcpw.html">The Simplest(?) Thing That Could Possibly Work for subtyping</a></li>
 </ul>
-</li>
-</ul>
-</div>
+
             
           
         </div>
@@ -106,7 +103,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">jspecify</a>
+          <a href="#">JSpecify</a>
         
       </nav>
 
@@ -131,18 +128,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>jspecify: 静的解析のための標準化されたJavaアノテーション</li>
+      <li>JSpecify: 静的解析のための標準化されたJavaアノテーション</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -157,9 +156,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="jspecify-standard-java-annotations-for-static-analysis">
-<h1>jspecify: 静的解析のための標準化されたJavaアノテーション<a class="headerlink" href="#jspecify-standard-java-annotations-for-static-analysis" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="toctree-wrapper compound">
-</div>
+<h1>JSpecify: 静的解析のための標準化されたJavaアノテーション<a class="headerlink" href="#jspecify-standard-java-annotations-for-static-analysis" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="our-goal">
 <h2>私達の目的<a class="headerlink" href="#our-goal" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Error ProneやIDE組み込みツールのようなJava静的解析ツールは、これまでリファクタリング自動化やバグの予防に活用されてきました。こうした利益をもたらす解析の多くは（<code class="docutils literal notranslate"><span class="pre">&#64;Nullable</span></code> や <code class="docutils literal notranslate"><span class="pre">&#64;Immutable</span></code> のような）特定のJavaアノテーションがソースコードまたはクラスファイルに含まれることを前提にしています。</p>
@@ -173,64 +170,25 @@
 </dd>
 </dl>
 </div>
+<div class="section" id="activity">
+<h2>Activity<a class="headerlink" href="#activity" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The primary location for our day-to-day work is on GitHub: <a class="reference external" href="https://github.com/jspecify/jspecify">https://github.com/jspecify/jspecify</a></p>
+</div>
 <div class="section" id="talks-about-jspecify">
-<h2>jspecifyに関するトーク<a class="headerlink" href="#talks-about-jspecify" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>JSpecifyに関するトーク<a class="headerlink" href="#talks-about-jspecify" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://drive.google.com/file/d/15wZ-cVPkfsNYzSez9WrAF4gEjWNzlDAD/view">JVMLS19 にて発表されたプロジェクト概要（英文） [jspecify: nullness]</a></p></li>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/15wZ-cVPkfsNYzSez9WrAF4gEjWNzlDAD/view">JVMLS19 にて発表されたプロジェクト概要（英文）</a></p></li>
 </ul>
 </div>
 <div class="section" id="participants">
 <h2>参加団体<a class="headerlink" href="#participants" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>以下に挙げるプロジェクトや組織がこのプロジェクトに協力しています:</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 51%" />
-<col style="width: 49%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>プロジェクト</p></th>
-<th class="head"><p>組織</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.android.com">Android</a></p></td>
-<td><p><a class="reference external" href="https://google.com">Google</a></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://checkerframework.org">Checker Framework</a></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://errorprone.info">Error Prone</a></p></td>
-<td><p><a class="reference external" href="https://google.com">Google</a></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/google/guava">Guava</a></p></td>
-<td><p><a class="reference external" href="https://google.com">Google</a></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></p></td>
-<td><p><a class="reference external" href="https://www.jetbrains.com/">JetBrains</a></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://kotlinlang.org/">Kotlin</a></p></td>
-<td><p><a class="reference external" href="https://www.jetbrains.com/">JetBrains</a></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/uber/NullAway">NullAway</a></p></td>
-<td><p><a class="reference external" href="https://uber.com">Uber</a></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://pmd.github.io/">PMD</a></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://pivotal.io/spring-app-framework">Spring</a></p></td>
-<td><p><a class="reference external" href="https://pivotal.io">Pivotal</a></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.sonarqube.org/">SonarQube</a></p></td>
-<td><p><a class="reference external" href="https://www.sonarsource.com/">SonarSource</a></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://spotbugs.rtfd.io/">SpotBugs</a></p></td>
-<td><p><a class="reference external" href="https://github.com/spotbugs/">SpotBugs Team</a></p></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td><p><a class="reference external" href="https://squareup.com">Square</a></p></td>
-</tr>
-</tbody>
-</table>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tsttcpw.html">The Simplest(?) Thing That Could Possibly Work for subtyping</a></li>
+</ul>
+</div>
 </div>
 <div class="section" id="contact-info">
 <h2>連絡先<a class="headerlink" href="#contact-info" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -250,28 +208,28 @@
            
           </div>
           <footer>
-  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tsttcpw.html" class="btn btn-neutral float-right" title="The Simplest(?) Thing That Could Possibly Work for subtyping" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; 著作権 2020, The jspecify Authors
+        &#169; Copyright 2020, The JSpecify Authors.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

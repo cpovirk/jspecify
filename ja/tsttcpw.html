@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="ja" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>The Simplest(?) Thing That Could Possibly Work for subtyping &mdash; jspecify  ドキュメント</title>
+  <title>The Simplest(?) Thing That Could Possibly Work for subtyping &mdash; JSpecify  ドキュメント</title>
   
 
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -36,7 +39,8 @@
 
     
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" /> 
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="prev" title="JSpecify: 静的解析のための標準化されたJavaアノテーション" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -50,7 +54,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> jspecify
+            <a href="index.html" class="icon icon-home"> JSpecify
           
 
           
@@ -81,38 +85,38 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">The Simplest(?) Thing That Could Possibly Work for subtyping</a><ul>
-<li><a class="reference internal" href="#references-to-concepts-defined-by-this-spec">References to concepts defined by this spec</a></li>
-<li><a class="reference internal" href="#additional-nullness">Additional nullness</a></li>
-<li><a class="reference internal" href="#augmented-type">Augmented type</a></li>
-<li><a class="reference internal" href="#null-aware-context">Null-aware context</a></li>
-<li><a class="reference internal" href="#augmented-type-of-a-type-usage-in-code">Augmented type of a type usage in code</a></li>
-<li><a class="reference internal" href="#augmented-type-of-an-intersection-type">Augmented type of an intersection type</a></li>
-<li><a class="reference internal" href="#unioning-an-augmented-type-with-an-additional-nullness">Unioning an augmented type with an additional nullness</a></li>
-<li><a class="reference internal" href="#bound-of-an-unbounded-wildcard">Bound of an “unbounded” wildcard</a></li>
-<li><a class="reference internal" href="#bound-of-an-object-bounded-type-parameter">Bound of an <code class="docutils literal notranslate"><span class="pre">Object</span></code>-bounded type parameter</a></li>
-<li><a class="reference internal" href="#substitution">Substitution</a></li>
-<li><a class="reference internal" href="#augmented-null-types">Augmented null types</a></li>
-<li><a class="reference internal" href="#the-least-convenient-world-and-the-most-convenient-world">The least convenient world and the most convenient world</a><ul>
-<li><a class="reference internal" href="#propagating-the-most-least-convenient-world">Propagating the most/least convenient world</a></li>
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Simplest(?) Thing That Could Possibly Work for subtyping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#references-to-concepts-defined-by-this-spec">References to concepts defined by this spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-nullness">Additional nullness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#augmented-type">Augmented type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#null-aware-context">Null-aware context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#augmented-type-of-a-type-usage-in-code">Augmented type of a type usage in code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#augmented-type-of-an-intersection-type">Augmented type of an intersection type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unioning-an-augmented-type-with-an-additional-nullness">Unioning an augmented type with an additional nullness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bound-of-an-unbounded-wildcard">Bound of an “unbounded” wildcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bound-of-an-object-bounded-type-parameter">Bound of an <code class="docutils literal notranslate"><span class="pre">Object</span></code>-bounded type parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#substitution">Substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#augmented-null-types">Augmented null types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-least-convenient-world-and-the-most-convenient-world">The least convenient world and the most convenient world</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#propagating-the-most-least-convenient-world">Propagating the most/least convenient world</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#same-type">Same type</a></li>
-<li><a class="reference internal" href="#subtyping">Subtyping</a></li>
-<li><a class="reference internal" href="#nullness-delegating-subtyping-rules-for-java">Nullness-delegating subtyping rules for Java</a></li>
-<li><a class="reference internal" href="#nullness-subtyping">Nullness subtyping</a></li>
-<li><a class="reference internal" href="#null-inclusive-under-every-parameterization">Null-inclusive under every parameterization</a></li>
-<li><a class="reference internal" href="#null-exclusive-under-every-parameterization">Null-exclusive under every parameterization</a></li>
-<li><a class="reference internal" href="#nullness-subtype-establishing-path">Nullness-subtype-establishing path</a></li>
-<li><a class="reference internal" href="#nullness-subtype-establishing-direct-supertype-edges">Nullness-subtype-establishing direct-supertype edges</a></li>
-<li><a class="reference internal" href="#containment">Containment</a></li>
-<li><a class="reference internal" href="#capture-conversion">Capture conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#same-type">Same type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subtyping">Subtyping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nullness-delegating-subtyping-rules-for-java">Nullness-delegating subtyping rules for Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nullness-subtyping">Nullness subtyping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#null-inclusive-under-every-parameterization">Null-inclusive under every parameterization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#null-exclusive-under-every-parameterization">Null-exclusive under every parameterization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nullness-subtype-establishing-path">Nullness-subtype-establishing path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nullness-subtype-establishing-direct-supertype-edges">Nullness-subtype-establishing direct-supertype edges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#containment">Containment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#capture-conversion">Capture conversion</a></li>
 </ul>
 </li>
 </ul>
-</div>
+
             
           
         </div>
@@ -126,7 +130,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">jspecify</a>
+          <a href="index.html">JSpecify</a>
         
       </nav>
 
@@ -136,6 +140,8 @@
         <div class="rst-content">
         
           
+
+
 
 
 
@@ -162,7 +168,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/tsttcpw.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -178,10 +184,33 @@
             
   <div class="section" id="the-simplest-thing-that-could-possibly-work-for-subtyping">
 <h1>The Simplest(?) Thing That Could Possibly Work for subtyping<a class="headerlink" href="#the-simplest-thing-that-could-possibly-work-for-subtyping" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p><strong>This is not “the jspecify spec.” This is an initial attempt to
+<p><strong>This is not “the JSpecify spec.” This is an initial attempt to
 formally specify only a subset of the rules we’ll need for a subset of
 features we wish to cover. Additionally, it deviates from some of our
 current working decisions in an effort to remain simple.</strong></p>
+<blockquote>
+<div><p class="rubric" id="high-level-overview">High-level overview</p>
+<p>It may be that some people will use this doc to guide their
+implementations in the near future. Please don’t hesitate to let
+cpovirk know of any confusing bits.</p>
+<p>I should probably preemptively clarify at least one thing. In this
+doc, I have tried to distinguish explicitly between 3 “kinds of
+nullability” of a given type usage. Each kind is derived (at least in
+part) from the previous:</p>
+<ol class="arabic simple">
+<li><p>What annotation (if any) appears directly on that type usage?</p></li>
+<li><p>What is the <a class="reference external" href="#additional-nullness">additional nullness</a> of that
+type usage?</p></li>
+<li><p>For that type usage…</p>
+<ul class="simple">
+<li><p>Is it safe to assume that is not <code class="docutils literal notranslate"><span class="pre">null</span></code>?</p></li>
+<li><p>Is it safe to put a <code class="docutils literal notranslate"><span class="pre">null</span></code> into it?</p></li>
+<li><p>neither (as in “parametric nullness”)</p></li>
+<li><p>both (as in “unspecified nullness” in “lenient mode”)</p></li>
+</ul>
+</li>
+</ol>
+</div></blockquote>
 <div class="section" id="references-to-concepts-defined-by-this-spec">
 <span id="concept-references"></span><h2>References to concepts defined by this spec<a class="headerlink" href="#references-to-concepts-defined-by-this-spec" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>When a rule in this spec refers to any concept that is defined in this
@@ -276,7 +305,7 @@ Otherwise, it is not.</p>
 </div>
 <div class="section" id="augmented-type-of-a-type-usage-in-code">
 <span id="augmented-type-of-usage"></span><h2>Augmented type of a type usage in code<a class="headerlink" href="#augmented-type-of-a-type-usage-in-code" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>For most type usages in source code or bytecode on which jspecify
+<p>For most type usages in source code or bytecode on which JSpecify
 nullness annotations are structurally valid, this section defines how to
 determine their <a class="reference external" href="#augmented-type">augmented types</a>. Note, however,
 that rules for specific cases below take precedence over the general
@@ -392,7 +421,7 @@ additional nullness is <code class="docutils literal notranslate"><span class="p
 <div><p>In both cases, we specify a bound that does not exist in the source
 or bytecode, deviating from the JLS. Because the base type of the
 bound is <code class="docutils literal notranslate"><span class="pre">Object</span></code>, this should produce no user-visible differences
-except to tools that implement jspecify nullness analysis.</p>
+except to tools that implement JSpecify nullness analysis.</p>
 </div></blockquote>
 <p>Whenever a JLS rule refers specifically to <code class="docutils literal notranslate"><span class="pre">&lt;?&gt;</span></code>, disregard it, and
 instead apply the rules for <code class="docutils literal notranslate"><span class="pre">&lt;?</span> <span class="pre">extends</span> <span class="pre">T&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">T</span></code> has a base
@@ -404,14 +433,14 @@ type of <code class="docutils literal notranslate"><span class="pre">Object</spa
 of 2 ways:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;T&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;T</span> <span class="pre">extends</span> <span class="pre">Object&gt;</span></code> with no jspecify nullness type annotations on
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;T</span> <span class="pre">extends</span> <span class="pre">Object&gt;</span></code> with no JSpecify nullness type annotations on
 the bound</p></li>
 </ul>
 <p>See <a class="reference external" href="https://docs.oracle.com/javase/specs/jls/se14/html/jls-4.html#jls-4.4">JLS
 4.4</a>.</p>
 <p>In bytecode, <code class="docutils literal notranslate"><span class="pre">&lt;T&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;T</span> <span class="pre">extends</span> <span class="pre">Object&gt;</span></code> are both represented as
 a type parameter with only a single upper bound, <code class="docutils literal notranslate"><span class="pre">Object</span></code>, and no
-jspecify nullness type annotations on the bound.</p>
+JSpecify nullness type annotations on the bound.</p>
 <p>If an <code class="docutils literal notranslate"><span class="pre">Object</span></code>-bounded type parameter appears in a <a class="reference external" href="#null-aware-context">null-aware
 context</a>, then its bound has a <a class="reference external" href="https://docs.google.com/document/d/1KQrBxwaVIPIac_6SCf--w-vZBeHkTvtaqPSU_icIccc/edit#bookmark=kix.k81vs7t5p45i">base
 type</a>
@@ -693,28 +722,28 @@ types.”</a>)</p></li>
            
           </div>
           <footer>
-  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="JSpecify: 静的解析のための標準化されたJavaアノテーション" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; 著作権 2020, The jspecify Authors
+        &#169; Copyright 2020, The JSpecify Authors.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
