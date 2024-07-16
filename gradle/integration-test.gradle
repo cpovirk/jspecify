@@ -37,7 +37,14 @@ configurations {
 
 dependencies {
     integrationTestImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    integrationTestImplementation "org.junit.vintage:junit-vintage-engine:${junitVersion}"
+    integrationTestImplementation "org.ops4j.pax.exam:pax-exam-junit4:${paxExamVersion}"
+    integrationTestRuntimeOnly "org.apache.felix:org.apache.felix.framework:7.0.5"
     integrationTestRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    integrationTestRuntimeOnly "org.ops4j.pax.exam:pax-exam-container-native:${paxExamVersion}"
+    integrationTestRuntimeOnly "org.ops4j.pax.exam:pax-exam-link-mvn:${paxExamVersion}"
+    integrationTestRuntimeOnly "org.ops4j.pax.url:pax-url-classpath:${paxUrlVersion}"
+    integrationTestRuntimeOnly "org.ops4j.pax.url:pax-url-link:${paxUrlVersion}"
     integrationTestRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.7.0'
     errorprone "com.google.errorprone:error_prone_core:${errorproneVersion}"
 }
@@ -55,6 +62,7 @@ integrationTestOnJava8.configure {
     classpath = sourceSets.integrationTest.runtimeClasspath
     testClassesDirs = sourceSets.integrationTest.output.classesDirs
     useJUnitPlatform()
+    systemProperty("jspecify.osgi.jar", classpath.files.findAll { it.name.contains("jspecify-") }.collect { it.absolutePath }.first())
 
     javaLauncher = javaToolchains.launcherFor {
         languageVersion = JavaLanguageVersion.of(8)
@@ -69,6 +77,7 @@ integrationTest.configure {
     classpath = sourceSets.integrationTest.runtimeClasspath
     testClassesDirs = sourceSets.integrationTest.output.classesDirs
     useJUnitPlatform()
+    systemProperty("jspecify.osgi.jar", classpath.files.findAll { it.name.contains("jspecify-") }.collect { it.absolutePath }.first())
 }
 
 tasks.named('check').configure {
