@@ -136,4 +136,10 @@ import java.lang.annotation.Target;
 @Documented
 @Target(TYPE_USE)
 @Retention(RUNTIME)
-public @interface Nullable {}
+public @interface Nullable {
+  class Foo {
+    void s() {
+      "".concat("");
+    }
+  }
+}

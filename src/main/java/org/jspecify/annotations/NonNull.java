@@ -93,4 +93,10 @@ import java.lang.annotation.Target;
 @Documented
 @Target(TYPE_USE)
 @Retention(RUNTIME)
-public @interface NonNull {}
+public @interface NonNull {
+  class Foo {
+    void s() {
+      "".concat("");
+    }
+  }
+}
